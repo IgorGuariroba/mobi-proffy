@@ -1,26 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Landing from './src/pages/Landing';
+
+import { Archivo_400Regular, Archivo_700Bold, useFonts } from '@expo-google-fonts/archivo';
+import { Poppins_600SemiBold } from '@expo-google-fonts/poppins';
 
 export default function App() {
+  let [fontsLoaded] = useFonts({
+    Archivo_400Regular,
+    Archivo_700Bold,
+    Poppins_600SemiBold,
+  });
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Hello Word</Text>
-      <Text style={styles.title}>Hello Word</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <Landing />
+      <StatusBar style='auto' />
+    </>
+
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#333',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize:32,
-    color: '#FFF',
-    fontWeight: 'bold',
-  }
-});
